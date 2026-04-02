@@ -530,3 +530,167 @@ RESPONSIVE - Media Queries
 
     }
 }
+
+/* Loading spinner */
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    /* ocupa toata latimea grid-ului */
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e0e0e0;
+    border-top-color: var(--culoare-secundara);
+    border-radius: 50%;
+    animation: rotire 0.8s linear infinite;
+}
+
+@keyframes rotire {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Eroare container */
+.eroare-container {
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+.eroare-icon {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 0.5rem;
+}
+
+.eroare-mesaj {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.btn-retry {
+    background: var(--culoare-secundara);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ====================================
+Stiluri suplimentare mutate din JS in CSS
+==================================== */
+.card-body {
+    padding: 1rem;
+}
+
+.badge-tip {
+    display: inline-block;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.badge-nivel {
+    display: inline-block;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.nivel-incepator {
+    background: #28a745;
+}
+
+.nivel-intermediar {
+    background:
+        #fd7e14;
+}
+
+.nivel-avansat {
+    background: #dc3545;
+}
+
+.card-speaker h3 {
+    margin: 0.5rem 0 0.25rem;
+}
+
+.data-sesiune {
+    font-size: 0.875rem;
+
+    color: #6C757D;
+}
+
+.titlu-workshopuri {
+    text-align: center;
+    color: #1B3A6B;
+    margin-bottom: 2rem;
+}
+
+.grid-workshopuri {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.workshop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.workshop-durata {
+    font-size: 0.875rem;
+    color: #6C757D;
+}
+
+.workshop-titlu {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.workshop-speaker {
+    font-size: 0.875rem;
+    color: #6C757D;
+    margin-bottom: 0.5rem;
+}
+
+.workshop-descriere {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.text-locuri {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.btn-inscriere {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
