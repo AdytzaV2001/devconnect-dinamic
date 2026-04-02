@@ -32,7 +32,7 @@ ${onRetry ? `<button class='btn-retry'>Incearca din nou</button>` : ''}
 // 1. DATE - Fetch de la API public (JSONPlaceholder)
 // ============================================================
 // URL-ul de baza al API-ului
-const API_BASE = 'https://jsonplaceholder.typicode.com';
+
 const STORAGE_KEY = 'devconnect_v2';
 // Transforma un user JSONPlaceholder intr-un obiect speaker DevConnect
 // JSONPlaceholder returneaza: { id, name, email, company.name, ... }
@@ -321,4 +321,45 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 window.devconnect_debug = () => console.table(
     JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-);
+);// INAINTE (fetch() direct din Lab 5):
+async function incarcaSpeakeri() {
+    const raspuns = await fetch(`${API_BASE}/users?_limit=6`);
+    if (!raspuns.ok) throw new Error(`Eroare: ${raspuns.status}`);
+    const utilizatori = await raspuns.json();
+    return utilizatori.map(transformaUserInSpeaker);
+}
+// DUPA (cu apiFetch din api.js):
+async function incarcaSpeakeri() {
+    // apiFetch adauga automat: timeout, retry, gestionare erori, logging
+    // Nu mai trebuie sa verificam raspuns.ok - apiFetch arunca eroare deja
+    const utilizatori = await apiFetch('/users?_limit=6');
+    return utilizatori.map(transformaUserInSpeaker);
+}
+// La fel pentru workshopuri:
+// INAINTE:
+// const raspuns = await fetch(`${API_BASE}/posts?_limit=3`);
+
+// if (!raspuns.ok) throw new Error(...);
+// const postari = await raspuns.json();
+// DUPA:
+async function incarcaWorkshopuri() {
+    const postari = await apiFetch('/posts?_limit=3');
+    // ... restul transformarii ramane la fel
+    const nivele = ['Incepator', 'Intermediar', 'Avansat'];
+    return postari.map((post, i) => ({
+        id: post.id,
+        titlu: post.title.length > 40 ? post.title.slice(0, 40) + '...' : post.title,
+        speaker: 'Speaker DevConnect',
+        durata: ['2 ore', '3 ore', '4 ore'][i % 3],
+        nivel: nivele[i % 3],
+        locuri: 30,
+        locuriLibere: [8, 0, 22][i % 3],
+        data: i < 2 ? '15 septembrie' : '16 septembrie',
+        ora: ['10:00-12:00', '14:00-18:00', '11:00-13:00'][i % 3],
+        sala: i % 2 === 0 ? 'Sala A' : 'Sala B',
+        descriere: post.body.length > 100 ? post.body.slice(0, 100) + '...' :
+            post.body,
+    }));
+}
+// Sterge variabila API_BASE din app.js (acum e in ApiConfig din api.js)
+// const API_BASE = 'https://jsonplaceholder.typicode.com'; ← STERGE ACEASTA LINIE

@@ -21,7 +21,15 @@ dezvoltatori web, Bucuresti">
     <!-- Continutul paginii va fi adaugat in Laboratorul 2 -->
     <!-- Legatura catre fisierul JavaScript -->
     <!-- defer = se executa dupa ce HTML-ul s-a incarcat complet -->
-    <script src="js/app.js" defer></script><!-- HEADER: logo + navigatie principala -->
+    <!-- INAINTE - un singur script -->
+    <script src="js/app.js" defer></script>
+    <!-- DUPA - api.js incarcat primul -->
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <!-- DE CE ORDINEA CONTEAZA:
+defer = scripturile se executa in ordinea din HTML, dupa parsarea paginii
+api.js TREBUIE sa fie executat inaintea app.js
+altfel window.apiFetch nu exista cand app.js o apeleaza -->
     <header>
 
         <div class="container">
