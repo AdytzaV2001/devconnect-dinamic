@@ -1,0 +1,7 @@
+# Fisiere sistem
+.DS_Store
+Thumbs.db
+# Fisiere editor
+.vscode/settings.json
+# Dependente (daca adaugam npm mai tarziu)
+node_modules/
