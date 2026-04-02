@@ -21,7 +21,279 @@ dezvoltatori web, Bucuresti">
     <!-- Continutul paginii va fi adaugat in Laboratorul 2 -->
     <!-- Legatura catre fisierul JavaScript -->
     <!-- defer = se executa dupa ce HTML-ul s-a incarcat complet -->
-    <script src="js/app.js" defer></script>
+    <script src="js/app.js" defer></script><!-- HEADER: logo + navigatie principala -->
+    <header>
+
+        <div class="container">
+            <!-- Logo-ul conferintei -->
+            <div class="logo">
+                <span>Dev</span><strong>Connect</strong><small> 2025</small>
+            </div>
+            <!-- Navigatia principala - linkuri catre sectiunile paginii -->
+            <nav aria-label="Navigatie principala">
+                <ul>
+                    <li><a href="#despre">Despre</a></li>
+                    <li><a href="#speakeri">Speakeri</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header><!-- MAIN: continutul principal al paginii -->
+    <main>
+        <!-- HERO: bannerul principal al conferintei -->
+        <section id="hero">
+            <div class="container">
+                <h1>DevConnect 2025</h1>
+                <p class="hero-subtitlu">
+                    Conferinta anuala pentru dezvoltatori web si pasionati de tehnologie
+                </p>
+                <p class="hero-detalii">
+                    <time datetime="2025-09-15">15</time>–
+                    <time datetime="2025-09-16">16 septembrie 2025</time>
+                    | Bucuresti, Romania
+                </p>
+                <!-- Butoanele de actiune -->
+                <div class="hero-butoane">
+                    <a href="#contact" class="btn-primar">Inregistreaza-te Acum</a>
+                    <a href="#program" class="btn-secundar">Vezi Programul</a>
+                </div>
+                <!-- Statistici rapide -->
+                <div class="hero-statistici">
+                    <div class="stat">
+                        <span class="stat-numar">500+</span>
+                        <span class="stat-label">Participanti</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-numar">20+</span>
+                        <span class="stat-label">Speakeri</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-numar">2</span>
+                        <span class="stat-label">Zile</span>
+                    </div>
+                </div>
+            </div>
+        </section><!-- DESPRE: informatii despre conferinta -->
+        <section id="despre">
+            <div class="container">
+                <h2>Despre Conferinta</h2>
+                <div class="despre-grid">
+                    <div class="despre-text">
+                        <p>
+                            DevConnect reuneste anual peste 500 de profesionisti din industria
+                            web pentru doua zile de prezentari, workshopuri si networking.
+                        </p>
+                        <p>
+                            Editia 2025 aduce teme despre React, Node.js, AI in dezvoltarea web,
+                            securitate si performanta aplicatiilor moderne.
+                        </p>
+                    </div>
+                    <div class="despre-detalii">
+                        <ul>
+                            <li><strong>Data:</strong> 15-16 septembrie 2025</li>
+
+                            <li><strong>Locatie:</strong> Sala Polivalenta, Bucuresti</li>
+                            <li><strong>Format:</strong> Prezentari, Workshopuri, Panel</li>
+                            <li><strong>Bilet:</strong> Gratuit pentru studenti</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section><!-- SPEAKERI: grid cu cardurile speakerilor -->
+        <section id="speakeri">
+            <div class="container">
+                <h2>Speakeri Confirmati</h2>
+                <p class="sectiune-subtitlu">Experti din industria web internationala</p>
+                <div class="grid-speakeri">
+                    <!-- Card Speaker 1 -->
+                    <article class="card-speaker">
+                        <figure>
+                            <!-- width si height previn "layout shift" la incarcare -->
+                            <img src="images/speaker1.jpg" alt="Fotografie Ana Popescu, Senior Engineer la Google"
+                                width="300" height="300" loading="lazy">
+                            <figcaption>Ana Popescu - Google</figcaption>
+                        </figure>
+                        <h3>Ana Popescu</h3>
+                        <p class="titlu-job">Senior Engineer</p>
+                        <p class="sesiune">React la Scara Mare</p>
+                        <p class="data-sesiune">
+                            <time datetime="2025-09-15T10:00">15 sept., 10:00</time>
+                        </p>
+                    </article>
+                    <!-- Card Speaker 2 -->
+                    <article class="card-speaker">
+                        <figure>
+                            <img src="images/speaker2.jpg" alt="Fotografie Ion Ionescu, DevOps Lead la Microsoft"
+                                width="300" height="300" loading="lazy">
+                            <figcaption>Ion Ionescu - Microsoft</figcaption>
+                        </figure>
+                        <h3>Ion Ionescu</h3>
+                        <p class="titlu-job">DevOps Lead</p>
+                        <p class="sesiune">CI/CD cu GitHub Actions</p>
+                        <p class="data-sesiune">
+                            <time datetime="2025-09-15T14:00">15 sept., 14:00</time>
+
+                        </p>
+                    </article>
+                    <!-- Card Speaker 3 -->
+                    <article class="card-speaker">
+                        <figure>
+                            <img src="images/speaker3.jpg" alt="Fotografie Maria Constantin, AI Researcher la DeepMind"
+                                width="300" height="300" loading="lazy">
+                            <figcaption>Maria Constantin - DeepMind</figcaption>
+                        </figure>
+                        <h3>Maria Constantin</h3>
+                        <p class="titlu-job">AI Researcher</p>
+                        <p class="sesiune">AI in Dezvoltarea Web</p>
+                        <p class="data-sesiune">
+                            <time datetime="2025-09-16T11:00">16 sept., 11:00</time>
+                        </p>
+                    </article>
+                </div><!-- /.grid-speakeri -->
+            </div><!-- /.container -->
+        </section><!-- PROGRAM: tabelul cu programul conferintei -->
+        <section id="program">
+            <div class="container">
+                <h2>Programul Conferintei</h2>
+                <!-- ZIUA 1 -->
+                <h3>Ziua 1 - 15 Septembrie 2025</h3>
+                <table>
+
+                    <caption>Program DevConnect 2025 - Ziua 1</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Ora</th>
+                            <th scope="col">Sala A - Web</th>
+                            <th scope="col">Sala B - DevOps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><time datetime="09:00">09:00</time></td>
+                            <!-- colspan="2": aceasta celula ocupa 2 coloane -->
+                            <td colspan="2">Ceremonie de Deschidere</td>
+                        </tr>
+                        <tr>
+                            <!-- scope="row": acest th descrie randul curent -->
+                            <th scope="row"><time datetime="10:00">10:00</time></th>
+                            <td>React la Scara Mare - Ana Popescu</td>
+                            <td>CI/CD cu GitHub Actions - Ion Ionescu</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><time datetime="12:00">12:00</time></th>
+                            <td colspan="2">Pauza de Pranz</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><time datetime="14:00">14:00</time></th>
+                            <td>Node.js in Productie - Radu Marin</td>
+                            <td>Docker pentru Dezvoltatori - Elena Popa</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                * Programul poate fi modificat. Ultima actualizare: 1 august 2025.
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section><!-- CONTACT: formularul de inregistrare -->
+        <section id="contact">
+            <div class="container">
+
+                <h2>Inregistreaza-te la DevConnect 2025</h2>
+                <p>Locurile sunt limitate. Inregistrarea este gratuita pentru studenti.</p>
+                <!-- novalidate: vom face validare custom cu JavaScript in Lab 4 -->
+                <form id="form-inregistrare" novalidate>
+                    <!-- Fieldset 1: Date personale -->
+                    <!-- fieldset grupeaza campuri inrudite; legend le da un titlu -->
+                    <fieldset>
+                        <legend>Date Personale</legend>
+                        <label for="nume-complet">Nume complet *</label>
+                        <input type="text" id="nume-complet" name="numeComplet" required minlength="3"
+                            placeholder="ex. Ana Popescu" autocomplete="name">
+                        <!-- span gol: JavaScript va injecta mesajele de eroare aici -->
+                        <span id="eroare-nume-complet" class="mesaj-eroare" hidden></span>
+                        <label for="email">Adresa de email *</label>
+                        <input type="email" id="email" name="email" required placeholder="ana@exemplu.ro"
+                            autocomplete="email">
+                        <span id="eroare-email" class="mesaj-eroare" hidden></span>
+                        <label for="telefon">Telefon</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="+40 7XX XXX XXX" autocomplete="tel">
+                        <span id="eroare-telefon" class="mesaj-eroare" hidden></span>
+                    </fieldset>
+                    <!-- Fieldset 2: Tip participant -->
+                    <fieldset>
+                        <legend>Tip Participant</legend>
+                        <!-- Radio buttons: acelasi name = un singur raspuns posibil -->
+                        <label>
+                            <input type="radio" name="tipParticipant" value="student" checked>
+                            Student (bilet gratuit)
+                        </label>
+                        <label>
+                            <input type="radio" name="tipParticipant" value="profesionist">
+                            Profesionist
+                        </label>
+                        <label>
+                            <input type="radio" name="tipParticipant" value="companie">
+                            Reprezentant companie
+                        </label>
+                    </fieldset>
+                    <!-- Fieldset 3: Workshopuri selectate -->
+                    <fieldset>
+                        <legend>Workshopuri (alege max 2)</legend>
+                        <!-- Checkboxes: pot fi bifate multiple -->
+                        <label>
+                            <input type="checkbox" name="workshop" value="react">
+                            React Avansat - Ana Popescu (15 sept, 10:00)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="workshop" value="nodejs">
+                            Node.js in Productie - Radu Marin (15 sept, 14:00)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="workshop" value="ai">
+                            AI in Web Dev - Maria Constantin (16 sept, 11:00)
+                        </label>
+                    </fieldset>
+                    <!-- Fieldset 4: Mesaj -->
+                    <fieldset>
+                        <legend>Intrebari sau Mesaje</legend>
+                        <label for="mesaj">Mesaj (optional)</label>
+                        <textarea id="mesaj" name="mesaj" rows="4" maxlength="500"
+                            placeholder="Intrebari despre conferinta, cerinte speciale...">
+
+</textarea>
+                    </fieldset>
+                    <!-- Butonul de submit -->
+                    <button type="submit">Trimite Inregistrarea</button>
+                    <!-- Zona pentru mesajul de confirmare/eroare (controlata de JS) -->
+                    <div id="mesaj-status" aria-live="polite" hidden></div>
+                </form>
+            </div>
+        </section>
+    </main><!-- inchide <main> care contine toate sectiunile -->
+    <!-- FOOTER: subsol pagina -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DevConnect. Toate drepturile rezervate.</p>
+            <!-- Navigatie footer - aria-label diferit de cea din header -->
+            <nav aria-label="Navigatie footer">
+                <a href="#despre">Despre</a>
+                <a href="privacy.html">Confidentialitate</a>
+                <a href="terms.html">Termeni</a>
+            </nav>
+            <!-- Date de contact cu elemente semantice -->
+            <address>
+                Email: <a href="mailto:contact@devconnect.ro">contact@devconnect.ro</a>
+                | Tel: <a href="tel:+40721000000">+40 721 000 000</a>
+            </address>
+        </div>
+    </footer>
 </body>
 
 </html>
